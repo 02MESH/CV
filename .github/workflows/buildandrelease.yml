@@ -1,4 +1,4 @@
-name: Compile Latex and Release PDF
+name: Compile and Release PDF
 
 on:
     push:

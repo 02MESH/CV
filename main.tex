@@ -5,17 +5,13 @@
 \usepackage{fontawesome}
 \usepackage{enumitem}
 \usepackage{etoolbox}
+\hypersetup{hidelinks}
 \usepackage[a4paper,
             %bindingoffset=0.2in,
             hmargin=0.5in,
             vmargin=0.4in,
-            footskip=.25in,
             marginparwidth=0pt]{geometry}
 \pagestyle{empty}
-
-%\makeatletter
-%\preto\enditemize{\vspace{-\dimexpr\baselineskip+\topsep\relax}}
-%\makeatother
 
 %Custom parameters
 \newlength{\tabin}
@@ -48,7 +44,7 @@
 }
 \newcommand{\name}[1]{\begin{center}\textsc{\Huge#1}\end{center}}
 \newcommand{\location}[1]{\begin{center}#1\end{center}}
-\newcommand{\contactSpace}{\hspace{1.3cm}} % Missing closing curly bracket
+\newcommand{\contactSpace}{\hspace{1.2cm}} % Missing closing curly bracket
 \newcommand{\contact}[1]{\begin{center}\color{contactgrey}{\small#1}\end{center}} % Added missing [1]
 \newcommand{\lineunder}{\vspace*{-8pt} \hspace*{-6pt} \coloredhrulefill[contactgrey]{}  \\* \vspace*{-8pt}}
 
@@ -103,7 +99,7 @@
 	\vspace*{-2px}
 	\renewcommand{\labelitemi}{\color{contactgrey}{\faCode}}
 	\begin{itemize}
-		\setlength{\labelsep}{0.5em}
+		\setlength{\labelsep}{0.3em}
 		\setlength{\itemsep}{0pt}
 		\setlength{\parsep}{0pt}
 		\setlength{\topsep}{0px}
@@ -115,22 +111,22 @@
 	\begin{resume_header}
 		\name{Meshwil}
 		\location{\textcolor{darkblue}{London, United Kingdom (Willing to relocate)}}
-		\contact{\faPhoneSquare \hspace{\secsep} 07865076487 \contactSpace \href{mailto:meshwildias@gmail.com}{\faSend \hspace{\secsep}meshwildias@gmail.com} \contactSpace \href{https://github.com/02MESH}{\faGithub \hspace{\secsep}My GitHub} \contactSpace \href{https://www.linkedin.com/in/mad-0000/}{\faLinkedinSquare \hspace{\secsep}My LinkedIn}}
+		\contact{\faPhoneSquare \hspace{\secsep} 07865076487 \contactSpace \href{mailto:meshwildias@gmail.com}{\faSend \hspace{\secsep}Email } \contactSpace \href{https://www.meshwildias.site/}{\faCompass \hspace{\secsep}Website} \contactSpace \href{https://github.com/02MESH}{\faGithub \hspace{\secsep}GitHub} \contactSpace \href{https://www.linkedin.com/in/mad-0000/}{\faLinkedinSquare \hspace{\secsep}LinkedIn}}
 	\end{resume_header}
 
 	%About Me
 	\begin{resume_section}{About me}
 		\begin{notabbedList}
-			\textbf{Programming Languages \& OSs} \hspace*{5pt} \= C++/C, Python, Javascript \& NodeJS, Java, Linux, Windows\\*
+			\textbf{Programming Languages \& OSs} \hspace*{5pt} \= C++, Python, Javascript \& NodeJS, Java, Linux, Windows\\*
 			\textbf{Databases} \> MySQL, PostgreSQL, MongoDB, Mongoose\\*
-			\textbf{Technologies \& Frameworks} \> HTML \& CSS, Bootstrap, EJS,  Express, Linux, \LaTeX\\*
-			\textbf{Cloud Technologies} \> Docker, AWS, Azure, Kubernetes\\*
+			\textbf{Technologies \& Frameworks} \> HTML \& CSS, Bootstrap, EJS,  Express, \LaTeX\\*
+			\textbf{Devops \& Cloud technologies} \> Docker, CI \& CD Pipelines (GitHub Actions)\\*
 		\end{notabbedList}
 	\end{resume_section}
 	
 	%Eduation
 	\begin{resume_section}{Education}
-		\begin{resume_subsection}{\href{https://www.kent.ac.uk/}{University of Kent}}{Canterbury, Kent}{Bachelor of Computer Science with Honours}{Sep 2021 - June 2024}
+		\begin{resume_subsection}{University of Kent}{Canterbury, Kent}{Bachelor of Computer Science with Honours}{Sep 2021 - June 2024}
 			\begin{subitems}
 				\item 1\textsuperscript{st} Class Predicted: (1\textsuperscript{st} Year Average: 86\%, 2\textsuperscript{nd} Year Average: 75\%)
 				\item Relevant Coursework: Artificial Intelligence, Algorithms and Data Stuctures, Cyber Security, Data Science, Embedded Systems, Cloud Computing, Linux
@@ -150,10 +146,10 @@
 	\begin{resume_section}{Personal Projects}
 	
 		%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\begin{personal_projects} {Docker App}{Java, C++}{Aug 2023 - Sep 2023}{https://www.google.com/}
+		\begin{personal_projects} {MongoDb connection Tester}{GitHub Action, Docker, Playwright, Javascript}{Aug 2023 - Current}{https://github.com/02MESH/docker-container-hosting}
 			\begin{subitems}
-				\item{testing}
-				\item{testing}
+%				\item{Wrote a template for testing correct mongoDB behaviour.}
+				\item{Implemented a custom GitHub Actions YAML workflows file where it tests everything and pushes changes if succeeded.}
 			\end{subitems}
 		\end{personal_projects}	
 	

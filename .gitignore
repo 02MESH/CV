@@ -1,4 +1,10 @@
-test.aux
-test.log
 *.synctex.gz
-test.out
+
+#Ignore everything starting with main
+main.aux
+main.log
+main.*
+
+#Exception include
+!main.tex
+!main.pdf

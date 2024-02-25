@@ -9,7 +9,7 @@
 \usepackage[a4paper,
             %bindingoffset=0.2in,
             hmargin=0.5in,
-            vmargin=0.4in,
+            vmargin=0.5in,
             marginparwidth=0pt]{geometry}
 \pagestyle{empty}
 
@@ -31,8 +31,9 @@
 %Colours here
 \definecolor{contactgrey}{rgb}{0.33, 0.33, 0.33}
 \definecolor{darkblue}{rgb}{0,0,0.5}
+%\definecolor{}
 
-\title{Testing}
+\title{CV}
 \author{Meshwil}
 \date{\today}
 
@@ -44,9 +45,9 @@
 }
 \newcommand{\name}[1]{\begin{center}\textsc{\Huge#1}\end{center}}
 \newcommand{\location}[1]{\begin{center}#1\end{center}}
-\newcommand{\contactSpace}{\hspace{1.2cm}} % Missing closing curly bracket
-\newcommand{\contact}[1]{\begin{center}\color{contactgrey}{\small#1}\end{center}} % Added missing [1]
-\newcommand{\lineunder}{\vspace*{-8pt} \hspace*{-6pt} \coloredhrulefill[contactgrey]{}  \\* \vspace*{-8pt}}
+\newcommand{\contactSpace}{\hspace{0.25cm}.\hspace{0.25cm}} % Missing closing curly bracket
+\newcommand{\contact}[1]{\vspace*{2\secsep}\begin{center}\small#1 \end{center}\vspace*{2\secsep}} % Added missing [1]
+\newcommand{\lineunder}{\vspace*{-24pt} \hspace*{-6pt} \coloredhrulefill[contactgrey]{}  \\* \vspace*{-15pt}}
 
 
 %Environments here
@@ -58,7 +59,7 @@
       \setlength{\itemsep}{0pt}
       \setlength{\labelsep}{0pt}
       \setlength{\labelwidth}{0pt}
-      \setlength{\leftmargin}{0pt}
+      \setlength{\leftmargin}{10pt}
       \setlength{\rightmargin}{0pt}
       \setlength{\listparindent}{0pt}
       \setlength{\parsep}{0pt}
@@ -75,30 +76,31 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newenvironment{resume_section}[1] {
-	\filbreak
-	\vspace{1\secsep}
-	\textsc{\Large\textcolor{darkblue}{#1}} \lineunder \vspace*{0.5\secsep}
+	%\filbreak
+	%\vspace{1\secsep}
+	\textsc{\Large #1} \\*
+	
+	\lineunder
 	\begin{tabbedList}{\secsep}
-}{\end{tabbedList}}
+}{\end{tabbedList}\vspace{1.2\secsep}}
 
 \newenvironment{resume_subsection}[4] {
-	\textbf{#1} \hfill {\footnotesize \textcolor{darkblue}{#2}}\vspace*{-1px}\\*  %\hspace{2em}
-	{\small#3} \hfill {\footnotesize \textit{\color{contactgrey}{#4}}}\vspace*{1px}
+	\textbf{#1} \hfill {\footnotesize #2}\vspace*{-1px}\\*  %\hspace{2em}
+	{\small#3} \hfill {\footnotesize \textit{#4}} \hspace{-4px}\vspace*{-8px}
 	
 	\begin{tabbedList}{0pt}
-}{\end{tabbedList}\vspace*{0.8\secsep}}
+}{\end{tabbedList}}
 
 \newenvironment{personal_projects}[4] {
-	\textbf{#1} \hfill \href{#4}{\color{darkblue}{\faGithub{\footnotesize \hspace*{\secsep}Project Link}}}\\*  %\hspace{2em}
-	{\small Tech Stack: #2} \hfill {\footnotesize \textit{\color{contactgrey}{#3}}}\vspace*{1px}
-	
+	\textbf{#1} \href{#4}{#3} $\mid$ {\scriptsize #2}  %\hspace{2em}
+	\vspace*{4px}
 	\begin{tabbedList}{0pt}
-}{\end{tabbedList}\vspace*{0.8\secsep}}
+}{\end{tabbedList}\vspace*{1.5\secsep}}
 
 \newenvironment{subitems}{
 	\vspace*{-2px}
-	\renewcommand{\labelitemi}{\color{contactgrey}{\faCode}}
-	\begin{itemize}
+	%\renewcommand{\labelitemi}{\color{contactgrey}{\faCode}}
+	\begin{itemize}[left=2pt]
 		\setlength{\labelsep}{0.3em}
 		\setlength{\itemsep}{0pt}
 		\setlength{\parsep}{0pt}
@@ -110,26 +112,17 @@
 \begin{document}
 	\begin{resume_header}
 		\name{Meshwil Dias}
-		\location{\textcolor{darkblue}{London, United Kingdom (Willing to relocate)}}
-		\contact{\faPhoneSquare \hspace{\secsep} 07865076487 \contactSpace \href{mailto:meshwildias@gmail.com}{\faSend \hspace{\secsep}Email } \contactSpace \href{https://www.meshwildias.site/}{\faCompass \hspace{\secsep}Website} \contactSpace \href{https://github.com/02MESH}{\faGithub \hspace{\secsep}GitHub} \contactSpace \href{https://www.linkedin.com/in/mad-0000/}{\faLinkedinSquare \hspace{\secsep}LinkedIn}}
+		\contact{\faPhoneSquare \hspace{\secsep} 07865076487 \contactSpace \href{mailto:meshwildias@gmail.com}{\faSend \hspace{\secsep}meshwildias@gmail.com } \contactSpace \href{https://www.meshwildias.site/}{\faCompass \hspace{\secsep}meshwildias.site} \contactSpace \href{https://github.com/02MESH}{\faGithub \hspace{\secsep}02MESH} \contactSpace \href{https://www.linkedin.com/in/mad-0000/}{\faLinkedinSquare \hspace{\secsep}Meshwil Dias}}
 	\end{resume_header}
-
-	%About Me
-	\begin{resume_section}{About me}
-		\begin{notabbedList}
-			\textbf{Programming Languages \& OSs} \hspace*{5pt} \= C++, Python, Javascript, Java, Windows, Linux \& Unix \\*
-			\textbf{Databases} \> MySQL, PostgreSQL, MongoDB, Mongoose\\*
-			\textbf{Technologies \& Frameworks} \> HTML, CSS, NodeJS, ReactJS, Bootstrap,  ExpressJS, \LaTeX\\*
-			\textbf{Devops \& Cloud technologies} \> Docker, CI \& CD Pipelines (GitHub Actions)\\*
-		\end{notabbedList}
-	\end{resume_section}
 	
-	%Eduation
+	\vspace*{1.5\seperate}	
+	
+	%Education
 	\begin{resume_section}{Education}
 		\begin{resume_subsection}{University of Kent}{Canterbury, Kent}{BSc Computer Science \textit{(Predicted 1:1)}}{Sep 2021 - June 2024}
 		\end{resume_subsection}
 		
-		\vspace*{\seperate}
+		%\vspace*{\seperate}
 		
 		\begin{resume_subsection}{St. Gregory's Catholic Science College}{Harrow, Greater London}{A-Levels in Business Studies\textit{(B)}, Computer Science\textit{(B)} \& Psychology\textit{(B)}}{Sep 2018 - Apr 2021}
 		\end{resume_subsection}
@@ -138,60 +131,73 @@
 	\begin{resume_section}{Personal Projects}
 	
 		%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\begin{personal_projects} {MongoDb connection Tester}{GitHub Action, Docker, Playwright, Javascript}{Aug 2023 - Current}{https://github.com/02MESH/docker-container-hosting}
+		\begin{personal_projects} {Passlock}{Typescript, React, Node, Electron, CSS, Docker, MySQL, Prisma}{\faGitlab}{https://github.com/02MESH/docker-container-hosting}
 			\begin{subitems}
-%				\item{Wrote a template for testing correct mongoDB behaviour.}
-				\item{Implemented a custom GitHub Actions YAML workflows file where it tests everything and pushes changes if succeeded.}
+				\item{Developing a team-oriented full-stack \textbf{password managing web application} that involves using an encrypted \textbf{REST API}, with \textbf{React} handling the frontend presented as an app through \textbf{Electron}.}
+				\item{Implemented the back-end using \textbf{Docker} along with \textbf{MySQL} and \textbf{Prisma} containers running on a custom port that serves data to the Frontend.}
+				\item{Master(i.e. Client) passwords are hashed using the \textbf{SHA256} hashing algorithm along with \textbf{AES256} encryption/decryption for saving/displaying the users' passwords. This is established in the front-end.}
+				\item{Testing methods such as \textbf{unit}, \textbf{acceptance} \& \textbf{integration} tests were used.}
 			\end{subitems}
 		\end{personal_projects}	
 	
 		\vspace*{\seperate}
+		
+		\begin{personal_projects}{AirAware}{C/C++, Arduino, HTML/CSS, Firebase, Twilio, ChartJS, JavaScript}{\faGithub}{https://github.com/02MESH/AirAware}
+			\begin{subitems}
+				\item{Developed a air-monitoring system which used a PM2.5 (Dust) \& DHT11 (Humidity \& Temperature) sensors that informed users through the \textbf{Twilio} client through SMS whenever user-set thresholds were breached.}
+				\item{Utilised the \textbf{Firebase realtime} database which fed live data to the webpage that updated itself in \textbf{15} second intervals for accurate telemetry.}
+				\item{Implemented the sensor data GUI through \textbf{ChartJS}.}
+			\end{subitems}
+		\end{personal_projects}
+			
+		\vspace*{\seperate}			
 			
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\begin{personal_projects} {Shopping Website}{HTML \& CSS, JS (NodeJS) \& expressJS, EJS, MongoDB \& Mongoose}{July 2023 - Sep 2023}{https://www.google.com/}
+		\begin{personal_projects} {Shopping Website}{HTML \& CSS, JS (NodeJS) \& Express, EJS, MongoDB \& Mongoose}{\faGithub}{https://www.google.com/}
 			\begin{subitems}
-				\item{Built a robust and scalable website by using express.js for routing, middleware management, and handling HTTP requests.}
-				\item{Implemented server-side logic using Node.js to manage product listings, user authentication, shopping cart functionality, order processing and database interactions.}
+				\item{Built a robust and scalable website by using \textbf{Express} for routing, middleware management, and handling \textbf{HTTP requests}.}
+				\item{Implemented server-side logic using \textbf{Node} to manage product listings, user authentication, shopping cart functionality, order processing and database interactions.}
+				\item{Used the \textbf{Mongo} DBMS which was served using a ODM tool i.e. \textbf{Mongoose}.}
 				\end{subitems}
 			\end{personal_projects}
 		
 		\vspace*{\seperate}	
 		
 		%Completed Project
-		\begin{personal_projects} {Hospital Management System}{Java, MySQL}{Feb 2023 - Apr 2023}{https://git.cs.kent.ac.uk/taa40/software-development}
+		\begin{personal_projects} {Hospital Management System}{Java, MySQL}{\faGitlab}{https://git.cs.kent.ac.uk/taa40/software-development}
 			\begin{subitems}
-				\item{Collaborated in a 4 member team to engineer customized software using the SCRUMS management approach, focused on receptionist functions, enabling efficient coordination of patient-doctor interactions.}
-				\item{Central to my role was architecting the MySQL DBMS, writing automated testing scripts and crafting the application GUI, both pivotal in data management, control and software consistency.}
+				\item{Collaborated in a 4 member team to engineer bespoke software for Doctor-Receptionist co-ordination using the \textbf{SCRUMS} management approach.}
+				\item{Designed the \textbf{MySQL DBMS} which ran on a \textbf{Linux} server.}
+				\item{Extensive focus on \textbf{regression} and \textbf{integration} testing using \textbf{JUnit}.}
+				\item{Regular \textbf{sprints}, retrospectives, \& task estimation.}
 			\end{subitems}
 		\end{personal_projects}		
 		
 		%Completed Project
-		\begin{personal_projects} {Custom Language Compiler}{C++, Bash}{Nov 2022 - Dec 2022}{https://github.com/02MESH/DOPL-Compiler}
+		\begin{personal_projects} {Custom Language Compiler}{C++, Bash}{\faGithub}{https://github.com/02MESH/DOPL-Compiler}
 			\begin{subitems}
-				\item{Engineered a tokeniser-parser to identify diverse datatypes and assess syntax validity.}
-				\item{Designed an O(n) time-complexity lexical analysis algorithm and created a comprehensive testing suite with 10+ meticulous tests for precise compilation validation.}
+				\item{Engineered a \textbf{tokeniser-parser} to identify diverse datatypes and assess syntax validity of a language known as DOPL.}
+				\item{Designed an \textbf{O(n)} time-complexity \textbf{lexical analysis} algorithm and created a comprehensive testing suite with \textbf{10+ meticulous tests} for precise compilation validation triggered by a simple \textbf{bash} script.}
 			\end{subitems}
 		\end{personal_projects}
 		
 		\vspace*{\seperate}	
 	
 		%Completed Project
-		\begin{personal_projects} {Tic-tac-toe}{Java, Swing and AWT(Java GUI Libraries)}{Apr 2022 - May 2022}{https://github.com/02MESH/Tictactoe}
+		\begin{personal_projects} {Chess}{Python, PyGame}{\faGithub}{https://github.com/02MESH/Chess}
 			\begin{subitems}
-				\item{Involved using software development strategies to produce the game at the least amount of time.}
-				\item{Developed a pseudo-random AI algorithm which used a pattern based system to defend/attack.}
+				\item{Implemented using the \textbf{PyGame} library to research AI algorithms i.e. \textbf{Minimax}.}
+				\item{Game modes included single-player (computer) \& multiplayer (play with friends).}
+				\item{Designed the game using the \textbf{OOP} design which used a modular structure.}
 			\end{subitems}
 		\end{personal_projects}
 		
-		\vspace*{\seperate}	
-	
-		%Completed Project
-		\begin{personal_projects} {Chess}{Python, PyGame}{Feb 2021 - May 2021}{https://github.com/02MESH/Chess}
-			\begin{subitems}
-				\item{Implemented a working chess game using the PyGame game library to create a bespoke game to examine the use of the minimax algorithm. A total of 2 game modes were produced i.e., multiplayer and single-player.}
-				\item{A sophisticated convoluted minimax algorithm was collaboratively developed with the expert guidance of my supervisor, effectively enhancing strategic decision-making in gameplay against the computer adversary through the maximization of optimal moves.}
-			\end{subitems}
-		\end{personal_projects}
-		
+	\end{resume_section}
+		\begin{resume_section}{Technical Skills}
+		\begin{notabbedList}
+			\textbf{Languages \& DBs} \hspace*{5pt} \= C++, Python, Java, Javascript, HTML/CSS, MySQL, MongoDB \\*
+			\textbf{Frameworks} \> Node, React, Bootstrap,  Express, Sequelise, Mongoose\\*
+			\textbf{Other Technologies} \> Docker, CI \& CD Pipelines (GitHub Actions), \LaTeX\\*
+		\end{notabbedList}
 	\end{resume_section}
 \end{document}
